@@ -40,9 +40,15 @@ count = int(iterations)
 
 
 while (count > 1):
-    print ("Next encoded String: " + b64converted)
+    print ("\nNext encoded String:\n " + b64converted)
     b64encode(b64converted)
     count -= 1
 
 
-print ("\nFinal Encoded String: " + b64converted)
+print ("\nFinal Encoded String:\n " + b64converted)
+print ("Base64 encoded text has been saved to b64encoded.txt")
+
+# Create a text file to store the encoded base64 text
+txtFile = open("b64encoded.txt", "w")
+txtFile.write(b64converted)
+txtFile.close()
