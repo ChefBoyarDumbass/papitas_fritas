@@ -23,36 +23,36 @@ def b64dcode (userString):
 # Store the user input of a base64 encoded string
 b64string = raw_input("Enter base 64 encoded string: ")
 
-# Ask the user how many times they want to decode the b64 string
-iterations = raw_input("Enter the number of times to decode the b64: ")
-# Add if statement to check isnumber otherwise set to 1
-
-print ("\nYou entered the following string: " + b64string)
-print ("\nThe string will be decoded " + iterations + " times!\n")
-
-# Print out the result of the decoded base64 string
-#print ("Decoded base64 string: " + dCoded)
+print ("\nYou entered the following string:\n " + b64string)
 
 # Initial function call with user input
 b64dcode(b64string)
 
-# Convert user input iterations to int for loop count
-count = int(iterations)
+# Will decode strings encoded up to 1000 times
+count = 1000
 
 # Add a counter to track the amount of attempts to decode
 attempts = 0
 
 while (count > 1):
-    print ("Next Decoded String: " + b64converted)
+    print ("\nNext Decoded String:\n " + b64converted)
 	attempts += 1
 	
 	try:
 		b64dcode(b64converted)
     
 	except:
-		print ("\nThe number you entered is too high try using " + str(attempts) + "...")
+	# Base64 string has been fully decoded
         break
 	
 	count -= 1
 
-print ("\nFinal Decoded String: " + b64converted)
+print ("\nFinal Decoded String:\n " + b64converted)
+
+
+print ("Base64 decoded text has been saved to b64decoded.txt")
+
+# Create a text file to store the decoded base64 text
+txtFile = open("b64decoded.txt", "w")
+txtFile.write(b64converted)
+txtFile.close()
