@@ -36,16 +36,16 @@ attempts = 0
 
 while (count > 1):
     print ("\nNext Decoded String:\n " + b64converted)
-	attempts += 1
+    attempts += 1
 	
-	try:
-		b64dcode(b64converted)
+    try:
+	b64dcode(b64converted)
     
-	except:
-	# Base64 string has been fully decoded
+    except:
+    # Base64 string has been fully decoded
         break
 	
-	count -= 1
+    count -= 1
 
 print ("\nFinal Decoded String:\n " + b64converted)
 
